@@ -497,7 +497,7 @@ esp_err_t mifare_classic_read_block(pn532_io_handle_t io_handle, uint8_t block, 
 
     if (buffer_len < 16) {
 #ifdef CONFIG_MIFAREDEBUG
-        ESP_LOGD(TAG, "Classic read buffer too small: %d", buffer_len);
+        ESP_LOGD(TAG, "Classic read buffer too small: %zu", buffer_len);
 #endif
         return ESP_ERR_INVALID_SIZE;
     }
@@ -560,7 +560,7 @@ esp_err_t mifare_classic_write_block(pn532_io_handle_t io_handle, uint8_t block,
 
     if (data_len != 16) {
 #ifdef CONFIG_MIFAREDEBUG
-        ESP_LOGD(TAG, "Classic write requires 16 bytes, got %d", data_len);
+        ESP_LOGD(TAG, "Classic write requires 16 bytes, got %zu", data_len);
 #endif
         return ESP_ERR_INVALID_SIZE;
     }
