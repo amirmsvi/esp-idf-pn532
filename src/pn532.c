@@ -585,7 +585,7 @@ esp_err_t mifare_classic_write_block(pn532_io_handle_t io_handle, uint8_t block,
 
     err = pn532_wait_ready(io_handle, 100);
     if (err != ESP_OK) {
-#ifdef CONFIG_PN532DEBUG
+#ifdef CONFIG_MIFAREDEBUG
         ESP_LOGD(TAG, "Classic write timeout");
 #endif
         return err;
